@@ -42,14 +42,14 @@ async function listExp(data) {
 
         let article = document.createElement("article");
         let header = document.createElement("h2");
-        let employerEl = document.createTextNode(data[i].companyname);
+        let employerEl = document.createTextNode(data[i].jobtitle);
 
         list.appendChild(article);
         article.appendChild(header);
         header.appendChild(employerEl);
 
         let roleEl = document.createElement("h3");
-        let role = document.createTextNode(data[i].jobtitle);
+        let role = document.createTextNode(data[i].companyname + ", " + data[i].location);
 
         article.appendChild(roleEl);
         roleEl.appendChild(role);
