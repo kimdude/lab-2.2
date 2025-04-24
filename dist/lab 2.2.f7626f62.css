@@ -1,0 +1,146 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap";
+nav a {
+  color: #fff;
+  align-content: center;
+  height: 100px;
+  padding: 0 40px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #72aa5c;
+  background-color: #e2e7d5;
+}
+
+.active {
+  color: #72aa5c;
+  background-color: #f8f8ed;
+}
+
+button {
+  background-color: #ebdd23;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #d8c51b;
+}
+
+form {
+  margin-left: 2%;
+}
+
+input, textarea {
+  background-color: #fff;
+  border: 1px solid #72aa5c;
+  border-radius: 5px;
+  width: 40%;
+  padding: 5px 10px;
+}
+
+@media screen and (width <= 700px) {
+  input, textarea {
+    width: 70%;
+  }
+}
+
+body {
+  background-color: #e2e7d5;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, arial;
+}
+
+header {
+  background-color: #82d169;
+  width: 100%;
+  height: 100px;
+}
+
+main {
+  background-color: #e2e7d5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: #f8f8ed;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-left: 2%;
+}
+
+p {
+  max-width: 65ch;
+  margin-left: 2%;
+}
+
+footer {
+  background-color: #82d169;
+  padding: 40px 2%;
+}
+
+nav ul {
+  flex-direction: row;
+  justify-self: center;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+article {
+  background-color: #72aa5c;
+  border-radius: 5px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 20px 2%;
+}
+
+article h2 {
+  color: #e2e7d5;
+}
+
+#companyNew, #titleNew, #locationNew, #descrNew, #company, #title, #location, #descr {
+  margin-bottom: 10px;
+  display: block;
+}
+
+#endNew, #startNew, #start, #end {
+  width: 15% !important;
+}
+
+#startNew, #start {
+  margin-right: 10px;
+}
+
+label[for="descr"], label[for="descrNew"] {
+  margin-top: 10px;
+  display: block;
+}
+
+@media screen and (width <= 500px) {
+  main {
+    width: 100%;
+  }
+
+  section {
+    width: 90%;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  article {
+    padding: 20px 5%;
+  }
+}
+/*# sourceMappingURL=lab 2.2.f7626f62.css.map */
