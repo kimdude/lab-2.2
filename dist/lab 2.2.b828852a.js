@@ -696,12 +696,12 @@ async function listExp(data) {
     for(let i = 0; i < data.length; i++){
         let article = document.createElement("article");
         let header = document.createElement("h2");
-        let employerEl = document.createTextNode(data[i].companyname);
+        let employerEl = document.createTextNode(data[i].jobtitle);
         list.appendChild(article);
         article.appendChild(header);
         header.appendChild(employerEl);
         let roleEl = document.createElement("h3");
-        let role = document.createTextNode(data[i].jobtitle);
+        let role = document.createTextNode(data[i].companyname + ", " + data[i].location);
         article.appendChild(roleEl);
         roleEl.appendChild(role);
         let descrEl = document.createElement("p");

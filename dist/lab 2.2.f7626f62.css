@@ -74,12 +74,12 @@ section {
   padding: 40px 20px;
 }
 
-h1 {
+p {
+  max-width: 65ch;
   margin-left: 2%;
 }
 
-p {
-  max-width: 65ch;
+h1 {
   margin-left: 2%;
 }
 
@@ -106,6 +106,10 @@ article {
 
 article h2 {
   color: #e2e7d5;
+}
+
+article p {
+  margin-left: 0 !important;
 }
 
 #companyNew, #titleNew, #locationNew, #descrNew, #company, #title, #location, #descr {
