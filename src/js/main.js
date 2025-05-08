@@ -259,6 +259,16 @@ async function addExpirience() {
     const endDate = document.getElementById("end");
     const descr = document.getElementById("descr");
 
+    //Timing message
+    const confirm = document.getElementById("confirm");
+    confirm.style.display = "block";
+    setTimeout(displayConfirmation, 5000);
+    function displayConfirmation () {
+        confirm.style.display = "none";
+    }
+
+    const errors = [];
+
     let newExp = {
         companyname: companyName.value,
         jobtitle: jobtitle.value,
@@ -268,30 +278,72 @@ async function addExpirience() {
         description: descr.value
     }
 
-    //Try/catch to call API
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newExp)
-        });
+    if(newExp.companyname === "") {
+        let errorMessage = "arbetsgivare";
+        errors.push(errorMessage);
 
-        if(!response.ok) {
-            throw new Error('An error occurred. Invalid answer from server.');
-        }
-
-    } catch (error) {
-        console.log("An error occurred: ", error.message);
+    } 
+    
+    if(newExp.jobtitle === "") {
+        let errorMessage = "yrkestitel";
+        errors.push(errorMessage);
 
     }
+    
+    if (newExp.location === "") {
+        let errorMessage = "plats";
+        errors.push(errorMessage);
 
-    companyName.value = "";
-    jobtitle.value = "";
-    location.value = "";
-    startDate.value = "";
-    endDate.value = "";
-    descr.value = "";
+    }
+    
+    if (newExp.startdate === "") {
+        let errorMessage = "startdatum";
+        errors.push(errorMessage);
+
+    }
+    
+    if (newExp.enddate === "") {
+        let errorMessage = "slutdatum";
+        errors.push(errorMessage);
+
+    } 
+
+    if (newExp.description === "") {
+        let errorMessage = "beskriving";
+        errors.push(errorMessage);
+
+    } 
+    
+    if(errors.length === 0) {
+        //Try/catch to call API
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newExp)
+            });
+
+            if(!response.ok) {
+                throw new Error('An error occurred. Invalid answer from server.');
+            }
+
+        } catch (error) {
+            console.log("An error occurred: ", error.message);
+
+        }
+
+        companyName.value = "";
+        jobtitle.value = "";
+        location.value = "";
+        startDate.value = "";
+        endDate.value = "";
+        descr.value = "";
+        
+    } else {
+        confirm.innerHTML = "Du måste ange <strong>" + errors.toString() + "</strong>.";
+
+    }
 
 }

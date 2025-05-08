@@ -90,10 +90,19 @@ label[for="descr"], label[for="descrNew"] {
     margin-top: 10px;
 }
 
+#confirm {
+    display: none;
+    height: 60px;
+    background-color: base.$extra-color;
+    text-align: center;
+    align-content: center;
+}
+
 /* Screens under 500px */
 @media screen and (max-width: 500px) {
     main { width: 100%; }
     section { width: 90%; }
     ul{ padding: 0px; }
     article { padding: 20px 5%; }
+    #confirm { height: 100px; }
 }
