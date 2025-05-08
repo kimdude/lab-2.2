@@ -9,7 +9,9 @@ if(list != null) {
 
 //Adding eventlisteners
 if(submitBtn != null) {
-    submitBtn.addEventListener("click", addExpirience);
+    submitBtn.addEventListener("click", function(event) {
+        addExpirience(event);
+    });
 }
 
 //Fetching data
@@ -251,7 +253,9 @@ async function deleteExp(id) {
 }
 
 //Adding experience
-async function addExpirience() {
+async function addExpirience(event) {
+    event.preventDefault(); //Preventing page from reloading
+
     const companyName = document.getElementById("company");
     const jobtitle = document.getElementById("title");
     const location = document.getElementById("location");
@@ -340,7 +344,7 @@ async function addExpirience() {
         startDate.value = "";
         endDate.value = "";
         descr.value = "";
-        
+
     } else {
         confirm.innerHTML = "Du måste ange <strong>" + errors.toString() + "</strong>.";
 
